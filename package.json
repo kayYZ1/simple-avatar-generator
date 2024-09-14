@@ -1,6 +1,6 @@
 {
 	"name": "simple-generic-avatar",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"type": "module",
 	"description": "Dead simple generic avatar generator.",
 	"main": "dist/esm/index.js",
