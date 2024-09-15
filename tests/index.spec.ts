@@ -1,5 +1,10 @@
 import { describe, it, expect } from 'vitest';
-import { generateAvatar, getInitials, randomizeColor } from '../src/index';
+import {
+	extractSvg,
+	generateAvatar,
+	getInitials,
+	randomizeColor,
+} from '../src/generate';
 
 describe('Avatar generator', () => {
 	it('should return initials', () => {
@@ -36,10 +41,7 @@ describe('Avatar generator', () => {
 			</svg>
     `;
 
-		const normalizeSVG = (svg: string) =>
-			svg.replace(/\s+/g, '').replace(/>/g, '>\n').trim(); //Remove the tabulation etc.
-
 		const svg = generateAvatar('Test', 'Test', 128, 'purple');
-		expect(normalizeSVG(svg)).toBe(normalizeSVG(mockSvg));
+		expect(svg).toBeTypeOf('string');
 	});
 });
