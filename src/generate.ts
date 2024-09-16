@@ -11,9 +11,7 @@ const getInitials = (name: string, surname: string) => {
 const extractSvg = (svg: string) => {
 	const svgMatch = svg.match(/<svg[^>]*>([\s\S]*?)<\/svg>/);
 
-	if (!svgMatch) return 'Error';
-
-	return `data:image/svg+xml;base64,${btoa(svgMatch[0])}`;
+	if (svgMatch) return `data:image/svg+xml;base64,${btoa(svgMatch[0])}`;
 };
 
 const randomizeColor = () => {
